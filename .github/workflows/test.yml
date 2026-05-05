@@ -13,5 +13,9 @@ jobs:
 
     - name: Exécuter l'action Docker
       uses: ./ # Utilise l'action locale
+      id: toto
       with:
         message: "This is only a test"
+    
+    - name: Afficher le message généré
+      run: echo "-> ${{ steps.toto.outputs.output-message }}"
